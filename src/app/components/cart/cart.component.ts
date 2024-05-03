@@ -19,7 +19,7 @@ export class CartComponent implements OnInit {
     const cartId = localStorage.getItem('cartId');
 
     if (cartId) {
-      this.http.get(`https://travelbaazarapi.onrender.com/api/travelbaazar/v1/cart-items/shopping-carts/${cartId}`)
+      this.http.get(`https://tripstoreapi.onrender.com/api/tripstore/v1/cart-items/shopping-carts/${cartId}`)
         .subscribe((response: Object) => {
           this.shoppingCart = response as any[];
         });
@@ -29,7 +29,7 @@ export class CartComponent implements OnInit {
   removeFromCart(item: any) {
     const cartItemId = item.id; // Obtén el ID del item que deseas eliminar
 
-    this.http.delete(`https://travelbaazarapi.onrender.com/api/travelbaazar/v1/cart-items/${cartItemId}`)
+    this.http.delete(`https://tripstoreapi.onrender.com/api/tripstore/v1/cart-items/${cartItemId}`)
       .subscribe(() => {
         // Eliminación exitosa, realiza las acciones necesarias (por ejemplo, actualizar la lista de compras)
         this.loadShoppingCart();
@@ -45,7 +45,7 @@ export class CartComponent implements OnInit {
     const cartId = localStorage.getItem('cartId');
 
     if (cartId) {
-      this.http.get(`https://travelbaazarapi.onrender.com/api/travelbaazar/v1/cart-items`)
+      this.http.get(`https://tripstoreapi.onrender.com/api/tripstore/v1/cart-items`)
         .subscribe((response: Object) => {
           this.shoppingCart = response as any[];
         });
