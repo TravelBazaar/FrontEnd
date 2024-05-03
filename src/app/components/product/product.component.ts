@@ -110,7 +110,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = '';
   }
   checkExistingCart(userId: string): Observable<boolean> {
-    const url = `https://tripstoreapi.onrender.com/api/tripstore/v1/shopping-carts`;
+    const url = `https://backendtravelbazaar-3krb.onrender.com/api/travelbazaar/v1/shopping-carts`;
     return this.http.get<any[]>(url).pipe(
       map((carts: any[]) => {
         return carts.some(cart => cart.user && cart.user.id === userId);
@@ -119,8 +119,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
   }
 
   createCart(userId: string): Observable<any> {
-    const createUrl = 'https://tripstoreapi.onrender.com/api/tripstore/v1/shopping-carts';
-    const getAllUrl = 'https://tripstoreapi.onrender.com/api/tripstore/v1/shopping-carts';
+    const createUrl = 'https://backendtravelbazaar-3krb.onrender.com/api/travelbazaar/v1/shopping-carts';
+    const getAllUrl = 'https://backendtravelbazaar-3krb.onrender.com/api/travelbazaar/v1/shopping-carts';
     const currentDate = new Date().toISOString();
     const cartData = {
       cartDateCreated: currentDate,
@@ -164,7 +164,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
                 id: cartId
               }
             };
-            const url = 'https://tripstoreapi.onrender.com/api/tripstore/v1/cart-items';
+            const url = 'https://backendtravelbazaar-3krb.onrender.com/api/travelbazaar/v1/cart-items';
             this.http.post<any>(url, cartItemData).subscribe(() => {
               this.snackBar.open('Producto agregado al carrito de compras', 'Cerrar', {
                 duration: 3000

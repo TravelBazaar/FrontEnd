@@ -1,4 +1,4 @@
 export const environment = {
-  apiUrl: 'https://tripstoreapi.onrender.com/api/tripstore/v1',
+  apiUrl: 'https://backendtravelbazaar-3krb.onrender.com/api/travelbazaar/v1',
   localURL: 'http://localhost:8080/api/v1',
 };
