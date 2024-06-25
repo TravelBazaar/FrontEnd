@@ -7,7 +7,8 @@ import {TripModel} from "../../models/trip.model";
   providedIn: 'root'
 })
 export class TripDataService {
-  baseURL = "https://backendtravelbazaar-3krb.onrender.com/api/travelbazaar/v1/trips";
+ baseURL="https://travelbazar.zeabur.app/api/travelbazaar/v1/trips";
+  //baseURL = "https://backendtravelbazaar-3krb.onrender.com/api/travelbazaar/v1/trips";
 
   constructor(private http: HttpClient) { }
 
